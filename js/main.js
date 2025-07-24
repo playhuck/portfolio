@@ -201,6 +201,17 @@
 	}
 	counter();
 
+	var updateCodingDays = function() {
+		var startDate = new Date('2022-05-09');
+		var currentDate = new Date();
+		var daysDiff = Math.floor((currentDate - startDate) / (1000 * 60 * 60 * 24));
+		
+		$('.number[data-number="365"]').attr('data-number', daysDiff);
+	};
+
+	updateCodingDays(); // counter() 호출 전에 실행
+	counter();
+
 
 	var contentWayPoint = function() {
 		var i = 0;
